@@ -7,6 +7,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.blogspot.bartoszkomin.hibernate_many_to_many_demo.model.Book;
+import com.blogspot.bartoszkomin.hibernate_many_to_many_demo.model.User;
 import com.blogspot.bartoszkomin.hibernate_many_to_many_demo.repository.BookRepository;
 
 /**
@@ -52,4 +54,17 @@ public class BookController {
 		
 		return returnBookList;
 	}
+	
+	/**
+	 * Get single book by Id
+	 * @param bookId - Book Id
+	 * @return Book entity
+	 */
+	@RequestMapping(value = "/{book_id}", method = RequestMethod.GET)
+	@ResponseStatus(code = HttpStatus.OK)
+	public Book getBookById(@PathVariable("book_id") Integer bookId) {
+
+		return bookRepository.findOne(bookId);
+	}
+	
 }

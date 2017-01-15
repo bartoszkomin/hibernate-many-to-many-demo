@@ -7,6 +7,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -52,4 +53,18 @@ public class UserController {
 		
 		return returnUserList;
 	}
+	
+	/**
+	 * Get single user by Id
+	 * @param userId - User Id
+	 * @return User entity
+	 */
+	@RequestMapping(value = "/{user_id}", method = RequestMethod.GET)
+	@ResponseStatus(code = HttpStatus.OK)
+	public User getUserById(@PathVariable("user_id") Integer userId) {
+
+		return userRepository.findOne(userId);
+	}
+
+
 }
