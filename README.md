@@ -17,20 +17,26 @@ To run project follow steps:
 
 You can use this curl commands to test endpoints:
 
-To add books:
-	curl -i -H "Content-Type: application/json" -X POST -d '{"name": "The Meaning of Relativit"}' http://127.0.0.1:8080/books
+- To add books
 
-To add users with book:
+	curl -i -H "Content-Type: application/json" -X POST -d '{"name": "The Meaning of Relativity"}' http://127.0.0.1:8080/books
+
+- To add users with book:
+
 	curl -i -H "Content-Type: application/json" -X POST -d '{"name": "Albert Einstein", "books":[{"id":1}]}' http://127.0.0.1:8080/users
 
 To get the all users:
+
 	curl -i -H "Content-Type: application/json" http://127.0.0.1:8080/users
 
-To get the all books:
+- To get the all books:
+
 	curl -i -H "Content-Type: application/json" http://127.0.0.1:8080/books
 
-To get single user:
+- To get single user:
+
 	curl -i -H "Content-Type: application/json" http://127.0.0.1:8080/users/1
 
-To get single book:
+- To get single book:
+
 	curl -i -H "Content-Type: application/json" http://127.0.0.1:8080/books/1
