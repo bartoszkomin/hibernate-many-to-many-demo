@@ -41,4 +41,4 @@ You can use this curl commands to test endpoints:
 
 	    curl -i -H "Content-Type: application/json" http://127.0.0.1:8080/books/1
 
-[1]: http://bartoszkomin.blogspot.com
+[1]: http://bartoszkomin.blogspot.com/2017/01/many-to-many-relation-with-hibernate.html
