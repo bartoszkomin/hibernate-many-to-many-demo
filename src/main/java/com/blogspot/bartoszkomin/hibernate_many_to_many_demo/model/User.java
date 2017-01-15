@@ -38,7 +38,6 @@ public class User {
     	joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"), 
     	inverseJoinColumns = @JoinColumn(name = "book_id", referencedColumnName = "id"), 
     	uniqueConstraints={@UniqueConstraint(columnNames={"user_id", "book_id"})})
-	@JsonIgnoreProperties("users")
 	private List<Book> books;
 	
 	
